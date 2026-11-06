@@ -1,0 +1,28 @@
+[workspace]
+members = ["crates/*", "runtime", "runtime/pallets/*", "node"]
+resolver = "2"
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+
+[package]
+name = "templar"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+set-core = { path = "crates/core" }
+set-ledger = { path = "crates/ledger" }
+set-token = { path = "crates/token" }
+set-consensus = { path = "crates/consensus" }
+set-vm = { path = "crates/vm" }
+set-legacy-node = { path = "crates/legacy-node" }
+set-node = { path = "node" }
+
+[[bin]]
+name = "templar-node"
+path = "src/main.rs"
+
+[dev-dependencies]
+tempfile = "3"

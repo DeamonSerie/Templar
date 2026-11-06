@@ -1,0 +1,17 @@
+[package]
+name = "set-legacy-node"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+set-core = { path = "../core" }
+set-ledger = { path = "../ledger" }
+set-token = { path = "../token" }
+set-consensus = { path = "../consensus" }
+set-vm = { path = "../vm" }
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+thiserror = "1"
+
+[[bin]]
+name = "set-legacy-node"

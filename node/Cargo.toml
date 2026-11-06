@@ -1,0 +1,11 @@
+[package]
+name = "set-node"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+set-legacy-node = { path = "../crates/legacy-node" }
+
+[[bin]]
+name = "set-node"
+path = "src/main.rs"

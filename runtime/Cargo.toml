@@ -1,0 +1,74 @@
+[package]
+name = "set-runtime"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "3.7", default-features = false, features = ["derive"] }
+scale-info = { version = "2.11", default-features = false, features = ["derive"] }
+frame-support = { version = "49.0", default-features = false }
+frame-system = { version = "49.0", default-features = false }
+frame-executive = { version = "49.0", default-features = false }
+sp-api = { version = "44.0", default-features = false }
+sp-block-builder = { version = "44.0", default-features = false }
+sp-core = { version = "43.0", default-features = false }
+sp-inherents = { version = "44.0", default-features = false }
+sp-offchain = { version = "44.0", default-features = false }
+sp-runtime = { version = "49.0", default-features = false }
+sp-session = { version = "46.0", default-features = false }
+sp-std = { version = "14.0", default-features = false }
+sp-transaction-pool = { version = "44.0", default-features = false }
+sp-version = { version = "47.0", default-features = false }
+pallet-balances = { version = "51.0", default-features = false }
+pallet-timestamp = { version = "49.0", default-features = false }
+pallet-sudo = { version = "50.0", default-features = false }
+pallet-transaction-payment = { version = "50.0", default-features = false }
+pallet-aura = { version = "49.0", default-features = false }
+pallet-grandpa = { version = "50.0", default-features = false }
+pallet-contracts = { version = "51.0", default-features = false }
+pallet-set-pricing = { path = "pallets/set-pricing", default-features = false }
+pallet-set-consensus = { path = "pallets/set-consensus", default-features = false }
+pallet-set-tan = { path = "pallets/set-tan", default-features = false }
+pallet-set-time = { path = "pallets/set-time", default-features = false }
+pallet-templar-debt-ledger = { path = "pallets/templar-debt-ledger", default-features = false }
+pallet-templar-lending = { path = "pallets/templar-lending", default-features = false }
+pallet-templar-liquidation = { path = "pallets/templar-liquidation", default-features = false }
+pallet-templar-ledger = { path = "pallets/templar-ledger", default-features = false }
+
+[dev-dependencies]
+sp-io = { version = "49.0" }
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    "scale-info/std",
+    "frame-support/std",
+    "frame-system/std",
+    "frame-executive/std",
+    "sp-api/std",
+    "sp-block-builder/std",
+    "sp-core/std",
+    "sp-inherents/std",
+    "sp-offchain/std",
+    "sp-runtime/std",
+    "sp-session/std",
+    "sp-std/std",
+    "sp-transaction-pool/std",
+    "sp-version/std",
+    "pallet-balances/std",
+    "pallet-timestamp/std",
+    "pallet-sudo/std",
+    "pallet-transaction-payment/std",
+    "pallet-aura/std",
+    "pallet-grandpa/std",
+    "pallet-contracts/std",
+    "pallet-set-pricing/std",
+    "pallet-set-consensus/std",
+    "pallet-set-tan/std",
+    "pallet-set-time/std",
+    "pallet-templar-debt-ledger/std",
+    "pallet-templar-lending/std",
+    "pallet-templar-liquidation/std",
+    "pallet-templar-ledger/std",
+]

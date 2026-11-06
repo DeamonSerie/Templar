@@ -1,0 +1,10 @@
+[package]
+name = "set-token"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+set-core = { path = "../core" }
+set-ledger = { path = "../ledger" }
+serde = { version = "1", features = ["derive"] }
+thiserror = "1"

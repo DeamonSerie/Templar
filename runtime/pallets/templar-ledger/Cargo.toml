@@ -1,0 +1,21 @@
+[package]
+name = "pallet-templar-ledger"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "3.7", default-features = false, features = ["derive"] }
+scale-info = { version = "2.11", default-features = false, features = ["derive"] }
+frame-support = { version = "49.0", default-features = false }
+frame-system = { version = "49.0", default-features = false }
+sp-std = { version = "14.0", default-features = false }
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    "scale-info/std",
+    "frame-support/std",
+    "frame-system/std",
+    "sp-std/std",
+]

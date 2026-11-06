@@ -1,0 +1,12 @@
+[package]
+name = "set-core"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+bincode = "1"
+sha2 = "0.10"
+secp256k1 = { version = "0.31", features = ["rand", "std", "global-context"] }
+thiserror = "1"
+rand = "0.9"
