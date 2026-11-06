@@ -1,6 +1,6 @@
 # Templar
 
-Templar is a Substrate-based algorithmic chain porting Pasion into Set-style pallets. Economic actions (deposits, withdrawals, loans, repayments) are gated by immutable schedules chosen by the ledger creator, evaluated against time-n ticks.
+Templar is a Substrate-based algorithmic chain for managing debt ledgers. It lets users create ledgers and perform economic actions — deposits, withdrawals, loans, and repayments — where each action type is gated by an immutable schedule chosen by the ledger creator. Schedules are evaluated against network time (time-n ticks), so operations succeed only when the current tick satisfies the configured start, interval, occurrence limit, and optional linked query condition.
 
 ## Time and Clocking
 
