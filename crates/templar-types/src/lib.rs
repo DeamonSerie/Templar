@@ -1,7 +1,7 @@
 #![cfg_attr(not(feature = "std"), no_std)]
 
-use codec::{Decode, Encode};
-use frame_support::pallet_prelude::{MaxEncodedLen, DecodeWithMemTracking};
+use codec::{Decode, DecodeWithMemTracking, Encode};
+use frame_support::pallet_prelude::MaxEncodedLen;
 use scale_info::TypeInfo;
 
 pub type Amount = u128;
@@ -26,7 +26,12 @@ pub struct Schedule {
 }
 
 impl Schedule {
-    pub fn new(start_tick: u128, interval_ticks: u128, max_occurrences: u32, tan_query_id: Option<u64>) -> Self {
+    pub fn new(
+        start_tick: u128,
+        interval_ticks: u128,
+        max_occurrences: u32,
+        tan_query_id: Option<u64>,
+    ) -> Self {
         Self {
             start_tick,
             interval_ticks,
@@ -79,9 +84,15 @@ pub enum TemplarError {
     DebtNotPaid,
     Frozen,
     LiquidationFailed,
+    Matured,
+    InvalidLoanAmount,
+    Burned,
 }
 
-// helper to convert f64 to basis points
 pub fn f64_to_bps(v: f64) -> u32 {
     (v * 10000.0) as u32
+}
+
+pub fn calculate_simple_interest(principal: u128, interest_rate_bps: u32) -> u128 {
+    principal.saturating_mul(interest_rate_bps as u128) / 10_000u128
 }

@@ -25,3 +25,9 @@ std = [
     "pallet-templar-debt-ledger/std",
     "templar-types/std",
 ]
+
+[dev-dependencies]
+sp-io = { version = "49.0" }
+sp-core = { version = "43.0" }
+sp-runtime = { version = "49.0" }
+pallet-set-pricing = { path = "../set-pricing", default-features = false }

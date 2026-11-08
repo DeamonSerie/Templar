@@ -984,7 +984,13 @@ mod templar_tests {
             // ledger schedules allow all
             let s = Schedule::new(0, 0, 0, None);
             let scheds = LedgerSchedules { deposit: s.clone(), withdrawal: s.clone(), loan: s.clone(), repayment: s.clone() };
-            assert_ok!(pallet_templar_debt_ledger::Pallet::<Test>::create_ledger(frame_system::RawOrigin::Signed(1).into(), 1, scheds));
+            assert_ok!(pallet_templar_debt_ledger::Pallet::<Test>::create_ledger(
+                frame_system::RawOrigin::Signed(1).into(),
+                1,
+                scheds,
+                0,
+                500
+            ));
             pallet_set_pricing::TokenBalances::<Test>::insert(1, 1, 100u128);
             // register tran delta
             assert_ok!(pallet::Pallet::<Test>::register_tran_delta(frame_system::RawOrigin::Root.into(), b"delta".to_vec()));
